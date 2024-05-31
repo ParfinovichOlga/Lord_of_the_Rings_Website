@@ -1,0 +1,17 @@
+{% include "header.html" %}
+<main >
+    <div class="container">
+        <form method="POST" action="/search" class="d-flex" role="search">
+          <input name="character" class="form-control me-2" type="text" placeholder="Search character" aria-label="Search">
+          <input  type="submit" class="btn btn-outline-success" value="Search"/>
+        </form>
+        {% for key in result %}
+        <span><b>{{key}}:  </b></span>
+        {% for i in result[key] %}
+        <a href="{{url_for('show_character', character_id=i.id)}}">{{i.name}}, </a>
+        {% endfor %}</br>
+        {% endfor %}
+    </div>
+</main>
+
+{% include "footer.html" %}

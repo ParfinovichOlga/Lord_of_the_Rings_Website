@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lord of the Rings</title>
+    {{ bootstrap.load_css() }}
+    <link
+      href="{{ url_for('static', filename='css/styles.css') }}"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <header class="d-flex justify-content-center py-3" style="background-image:url('../static/assets/img/tree.jpg')">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{{url_for('home')}}" style="color:#FFD700" class="nav-link" aria-current="page"><b>Home</b></a></li>
+        <li class="nav-item"><a href="{{url_for('all_movies')}}" style="color:#FFD700" class="nav-link"><b>Movies</b></a></li>
+        <li class="nav-item"><a href="{{url_for('all_books')}}" style="color:#FFD700" class="nav-link"><b>Books</b></a></li>
+        <li class="nav-item"><a href="{{url_for('all_characters')}}" style="color:#FFD700" class="nav-link"><b>Characters</b></a></li>
+      </ul>
+    </header>
+</body>
+</html>

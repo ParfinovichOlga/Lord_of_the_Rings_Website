@@ -1,0 +1,31 @@
+{% include "header.html" %}
+{{ bootstrap.load_css() }}
+<main style="background-image:url('./static/assets/img/bg.jpg')">
+  <div class="container">
+    <div class="p-4 p-md-5 rounded text-body-emphasis bg-body-secondary">
+        <h1 class="display-4 fst-italic">Lord of the Rings</h1>
+        <p class="lead my-3">The Lord of the Rings is a trilogy of epic fantasy adventure films directed by Peter Jackson, based on the novel The Lord of the Rings by British author J. R. R. Tolkien. The films are subtitled The Fellowship of the Ring (2001), The Two Towers (2002), and The Return of the King (2003).</p>
+        <p class="lead my-1">The Hobbit is a series of three fantasy adventure films directed by Peter Jackson. The films are subtitled An Unexpected Journey (2012), The Desolation of Smaug (2013), and The Battle of the Five Armies (2014). The films are based on J. R. R. Tolkien's 1937 novel The Hobbit.</p>
+    </div>
+    <div class="row mb-2">
+      {% for movie in movies %}
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">{{movie.name}}</h3>
+            <div class="mb-1 text-body-secondary">Budget: {{movie.budget_millions}} millions</div>
+            <div class="mb-1 text-body-secondary">Revenue: {{movie.revenue_millions}} millions</div>
+            <div class="mb-1 text-body-secondary">Award nominations: {{movie.award_nomination}}</div>
+            <div class="mb-1 text-body-secondary">Award wins: {{movie.award_wins}}</div>
+          </div>
+          <div class="d-none d-lg-block">
+            <img src="{{movie.img_url}}" class="bd-placeholder-img" width="250" height="250"  role="img"/>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</main>
+{% include "footer.html" %}

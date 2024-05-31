@@ -1,0 +1,45 @@
+{% include "header.html" %}
+{{ bootstrap.load_css() }}
+
+<main style="background-image:url('../static/assets/img/bg.jpg')">
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6"></div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{character.name}}</h1>
+        {% if character.url %}
+        <a href="{{character.url}}">{{character.url}}</a>
+        {% endif %}
+        <p class="lead"><b>Race</b>: {{character.race}}</p>
+        {% if character.birth %}
+        <p class="lead"><b>Birth</b>: {{character.birth}}</p>
+        {% endif %}
+        {% if character.gender %}
+        <p class="lead"><b>Gender</b>: {{character.gender}}</p>
+        {% endif %}
+        {% if character.death %}
+        <p class="lead"><b>Death</b>: {{character.death}}</p>
+        {% endif %}
+        {% if character.hair %}
+        <p class="lead"><b>Hair</b>: {{character.hair}}</p>
+        {% endif %}
+        {% if character.height %}
+        <p class="lead"><b>Height</b>: {{character.height}}</p>
+        {% endif %}
+        {% if character.realm %}
+        <p class="lead"><b>Realm</b>: {{character.realm}}</p>
+        {% endif %}
+        {% if character.spouse %}
+        <p class="lead"><b>Spouse</b>: {{character.spouse}}</p>
+        {% endif %}
+        {% if character.character_quotes %}
+        <p class="lead"><b>Quotes</b>:</p>
+          {% for quote in character.character_quotes %}
+            <li class="lead">  {{quote.dialog}}</li>
+          {% endfor %}
+        {% endif %}
+      </div>
+      </div>
+    </div>
+  </div>
+</main>

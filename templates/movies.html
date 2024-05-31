@@ -1,0 +1,37 @@
+{% include "header.html" %}
+<body style="background-image:url('./static/assets/img/bg.jpg')">
+    <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for movie in movies %}
+          {% if movie.id != '5cd95395de30eff6ebccde56' %}
+          {% if movie.id != '5cd95395de30eff6ebccde57' %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{movie.img_url}}" class="bd-placeholder-img card-img-top" width="50%" height="325"  preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+            <div class="card-body">
+              <p class="card-text">{{movie.name}}</p>
+              <small><b>Budget:</b> {{movie.budget_millions}} millions</small><br/>
+              <small><b>Revenue:</b> {{movie.revenue_millions}} millions</small><br/>
+              <small><b>Award nominations:</b> {{movie.award_nomination}}</small><br/>
+              <small><b>Award wins:</b> {{movie.award_wins}}</small><br/>
+              <small><b>Rotten Tomatoes Score:</b> {{movie.rotten_tomatoes_score }}</small><br/>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    {% if movie.quotes|length >0 %}
+                  <a href="{{url_for('quotes', movie_id=movie.id)}}" type="button" class="btn btn-sm btn-outline-secondary">Quotes</a>
+                    {% endif %}
+                </div>
+                <small class="text-body-secondary">{{movie.run_time_minutes}} mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+ </div>
+</body>
+{% include "footer.html" %}

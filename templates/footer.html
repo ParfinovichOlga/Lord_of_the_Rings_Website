@@ -1,0 +1,12 @@
+{{ bootstrap.load_css() }}
+<main style="background-image:url('../static/assets/img/bg.jpg')">
+<footer>
+    <ul class="nav justify-content-center">
+      <li class="nav-item"><a href="{{url_for('home')}}" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="{{url_for('all_movies')}}" class="nav-link px-2 text-body-secondary">Movies</a></li>
+      <li class="nav-item"><a href="{{url_for('all_books')}}" class="nav-link px-2 text-body-secondary">Books</a></li>
+      <li class="nav-item"><a href="{{url_for('all_characters')}}" class="nav-link px-2 text-body-secondary">Characters</a></li>
+    </ul>
+    <p class="text-center text-body-secondary">Copyright &copy; Your Website 2024</p>
+</footer>
+</main>

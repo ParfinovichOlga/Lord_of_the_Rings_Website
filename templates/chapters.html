@@ -1,0 +1,9 @@
+{% include "header.html" %}
+<body style="background-image: url('../static/assets/img/bg_image.jpg')">
+    <div class="container">
+        <h2 style="color:black">{{book.name}}</h2>
+        {% for chapter in book.chapters %}
+            <li style="color:black">{{chapter.name}}</li>
+        {% endfor %}
+    </div>
+</body>

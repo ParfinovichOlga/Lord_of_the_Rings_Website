@@ -1,0 +1,18 @@
+{% include "header.html" %}
+{{ bootstrap.load_css() }}
+
+<body style="background-image:url('./static/assets/img/bg.jpg')">
+  <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <p> <h2 class="featurette-heading fw-normal lh-1">"The Lord of the Rings" books</h2> </p></br>
+        {% for book in books %}
+          <ul class="list-group"> {{book.name}} </ul>
+          <a href="{{url_for('all_chapters', book_id=book.id)}}">chapters</a></br>
+        {% endfor %}
+      </div>
+        <div class="col-md-5 order-md-1"></br>
+            <img src="../static/assets/img/lotr_trilogy.jpeg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"></img>
+        </div>
+      </div>
+  </div>
+</body>
